@@ -1,97 +1,79 @@
-# Healthcare_Appointment_Patient_CRM
+# 🏥 Healthcare Appointment & Patient CRM
 
+> An enterprise-grade, end-to-end Salesforce CRM built for seamless healthcare practice management—covering patient intake, doctor scheduling, clinical prescriptions, automated billing, and advanced analytics.
 
-An end-to-end Salesforce CRM for managing patients, doctors, appointments, prescriptions and billing in a healthcare setting. Built on the Salesforce Platform with custom objects, Flow automation, Apex, Visualforce, Lightning Web Components, and reports and dashboards.
+[![Salesforce Platform](https://img.shields.io/badge/Platform-Salesforce%20Developer%20Edition-00A1E0?style=flat&logo=salesforce)](https://developer.salesforce.com/)
+[![Apex & LWC](https://img.shields.io/badge/Tech-Apex%20%7C%20LWC%20%7C%20Visualforce-blueviolet)](https://developer.salesforce.com/)
+[![Status](https://img.shields.io/badge/Status-Completed-success)](https://github.com/sakshi575/Healthcare_Appointment_Patient_CRM)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Final-year B.Tech project by Sakshi Singh.
+---
 
-Features
-Patient, doctor and appointment management in one connected data model
-Prescription and billing tracking linked to each appointment
-Flow automation: Screen Flow for guided data entry, Record-Triggered Flow for instant updates, Scheduled Flow for recurring tasks
-Approval Process for records that need sign-off
-Apex class and trigger for custom business logic, with a test class for code coverage
-Visualforce page and two Lightning Web Components for the user interface
-Validation Rules and Formula Fields to keep data clean
-Role-based security through users, profiles and permissions
-Reports and a dashboard for appointment and patient insights
-Build Phases
-The project was built in 20 phases, from org setup to final testing.
+## 📖 About the Project
 
-Phase	Step
-1	Create Salesforce Org
-2	Create Objects
-3	Create Fields
-4	Create Relationships
-5	Create Sample Data
-6	Validation Rules & Formula Fields
-7	Create Users & Security
-8	Screen Flow
-9	Record-Triggered Flow
-10	Scheduled Flow
-11	Approval Process
-12	Apex Class
-13	Apex Trigger
-14	Test Class
-15	Visualforce
-16	LWC #1
-17	LWC #2
-18	Reports
-19	Dashboard
-20	Testing & Presentation
-Tech Stack
-Area	Technology
-Platform	Salesforce (Developer Edition org)
-Data model	Custom objects, fields, relationships
-Automation	Screen Flow, Record-Triggered Flow, Scheduled Flow, Approval Process
-Backend logic	Apex (class, trigger, test class)
-UI	Visualforce, Lightning Web Components (LWC)
-Analytics	Reports and Dashboards
-Tooling	Salesforce CLI, VS Code with Salesforce Extension Pack, Git
-Data Model
-Object	Purpose
-Patient	Stores patient details
-Doctor	Stores doctor details
-Appointment	Links a patient with a doctor for a visit
-Prescription	Medicines prescribed during an appointment
-Billing	Charges and payment status for an appointment
-Project Structure
-This is a Salesforce DX project.
+Developed as a **Final-Year B.Tech Computer Science and Engineering (Data Science)** project by **Sakshi Singh**, this solution bridges clinical operations and customer relationship management (CRM) on the Salesforce Platform. It replaces legacy manual record-keeping with a secure, automated, and connected healthcare ecosystem.
 
-force-app/main/default/
-  objects/              Custom objects, fields, validation rules
-  classes/              Apex classes and test classes
-  triggers/             Apex triggers
-  flows/                Screen, Record-Triggered and Scheduled flows
-  approvalProcesses/    Approval processes
-  pages/                Visualforce pages
-  lwc/                  Lightning Web Components
-  reports/              Reports
-  dashboards/           Dashboards
-docs/screenshots/       Screenshots used in this README
-sfdx-project.json       Project configuration
-Getting Started
-Prerequisites
-Salesforce CLI
-VS Code with the Salesforce Extension Pack
-A free Developer Edition org
-Deploy to your own org
-# 1. Clone the repository
-git clone https://github.com/sakshi575/Healthcare_Appointment_Patient_CRM.git
-cd Healthcare_Appointment_Patient_CRM
+---
 
-# 2. Log in to your org
-sf org login web --alias healthcare-crm
+## ✨ Key Features
 
-# 3. Deploy the metadata
-sf project deploy start --source-dir force-app --target-org healthcare-crm
+*   **Unified Data Model:** Centralized management of Patients, Doctors, and Appointments in a single relational structure.
+*   **Clinical & Financial Tracking:** Linked prescriptions and automated billing/payment status tracking per appointment.
+*   **Advanced Flow Automation:**
+    *   *Screen Flow:* Guided data entry wizards for intuitive patient onboarding.
+    *   *Record-Triggered Flow:* Real-time automated updates and notifications.
+    *   *Scheduled Flow:* Automated background tasks and appointment follow-ups.
+*   **Governance & Approvals:** Custom Approval Process for clinical sign-offs and administrative requests.
+*   **Custom Backend Logic:** Robust Apex classes, triggers, and automated test classes ensuring high code coverage.
+*   **Modern User Interface:** Built using Lightning Web Components (LWC) and Visualforce pages for dynamic user experiences.
+*   **Data Integrity & Security:** Validation rules, formula fields, and granular role-based security (Profiles, Permission Sets, Sharing Rules).
+*   **Analytics & Reporting:** Custom reports and interactive dashboards tracking appointment trends, billing metrics, and patient demographics.
 
-# 4. Run the Apex tests
-sf apex run test --target-org healthcare-crm --result-format human --wait 10
+---
 
-# 5. Open the org
-sf org open --target-org healthcare-crm
-Author
-Sakshi Singh, final-year B.Tech Computer Science and Engineering (Data Science)
+## 🛠️ Tech Stack
 
-GitHub | LinkedIn
+| Area | Technology / Components |
+| :--- | :--- |
+| **Platform** | Salesforce Developer Edition Org |
+| **Data Model** | Custom Objects, Custom Fields, Master-Detail & Lookup Relationships |
+| **Automation** | Screen Flows, Record-Triggered Flows, Scheduled Flows, Approval Processes |
+| **Backend Logic** | Apex (Classes, Triggers, Test Classes) |
+| **User Interface** | Lightning Web Components (LWC), Visualforce, Salesforce Lightning Design System (SLDS) |
+| **Analytics** | Salesforce Reports & Dashboards |
+| **Tooling & CI/CD** | Salesforce CLI (`sf`), VS Code (Salesforce Extension Pack), Git & GitHub |
+
+---
+
+## 📊 Core Data Model
+
+| Object Name | API Name | Purpose / Description |
+| :--- | :--- | :--- |
+| **Patient** | `Patient__c` | Stores comprehensive personal and medical history details. |
+| **Doctor** | `Doctor__c` | Maintains physician profiles, specializations, and availability. |
+| **Appointment** | `Appointment__c` | Junction-style core object linking a Patient to a Doctor for a scheduled visit. |
+| **Prescription** | `Prescription__c` | Tracks medicines, dosage instructions, and clinical notes per appointment. |
+| **Billing** | `Billing__c` | Manages itemized charges, invoice statuses, and payment tracking. |
+
+---
+
+## 📂 Project Structure
+
+This project follows standard **Salesforce DX (sfdx)** source-driven architecture:
+
+```text
+Healthcare_Appointment_Patient_CRM/
+│
+├── force-app/main/default/
+│   ├── objects/              # Custom objects, fields, validation rules
+│   ├── classes/              # Apex classes and test classes
+│   ├── triggers/             # Apex triggers
+│   ├── flows/                # Screen, Record-Triggered, and Scheduled flows
+│   ├── approvalProcesses/    # Approval workflows
+│   ├── pages/                # Visualforce pages
+│   ├── lwc/                  # Lightning Web Components
+│   ├── reports/              # Custom reporting folders
+│   └── dashboards/           # Analytics dashboards
+│
+├── docs/screenshots/         # Application UI screenshots
+└── sfdx-project.json         # Project configuration
